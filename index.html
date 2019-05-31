@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count=0;
+    let res='';
+    var N=2;
+    var num=parseInt(prompt('Nhập số lượng nguyên tố cần in ra'));
+
+    while (count<num)
+    {
+        if(KiemTraSoNguyenTo(N))
+        {
+            res+=" "+N+' ';
+            N++;
+            count++;
+        }
+        else {N++;}
+
+    }
+    function KiemTraSoNguyenTo(NT) {
+        if (NT < 2){
+            return false;
+        }
+        for(var i=2;i<(NT-1);i++)
+        {
+            if (NT % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    alert(res);
+</script>
+</body>
+</html>
